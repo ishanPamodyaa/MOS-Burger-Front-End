@@ -185,10 +185,24 @@ function editCustomer(index) {
   const myModal = new bootstrap.Modal(document.getElementById("myModal"), {});
   myModal.show();
 }
-
+function imageToByteArray(imgSrc, callback) {
+  fetch(imgSrc)
+      .then(response => response.blob())
+      .then(blob => {
+        let reader = new FileReader();
+        reader.onloadend = function() {
+          let binaryString = atob(reader.result.split(',')[1]); // Decode Base64
+          let byteArray = new Uint8Array(binaryString.length);
+          for (let i = 0; i < binaryString.length; i++) {
+            byteArray[i] = binaryString.charCodeAt(i);
+          }
+          callback(byteArray);
+        };
+        reader.readAsDataURL(blob); // Convert Blob to Base64
+      })
+      .catch(error => console.error("Error converting image to byte array:", error));
+}
 function addNewCustomer() {
-  console.log("add new ekata awa");
-
   const customerID = document.getElementById("customerID").value;
   const customerNIC = document.getElementById("customerNIC").value;
   const genderElement = document.getElementById("Gender");
@@ -202,78 +216,44 @@ function addNewCustomer() {
   const city = document.getElementById("customerCity").value;
   const joinDate = document.getElementById("joinDate").value;
   let imgSrc = document.getElementById("imagePreview").src;
-  console.log("add new ekata awa 2");
+
   if (gender == "Male") {
     imgSrc = "../image/cutomer icon/men.png";
   } else if (gender == "Female") {
     imgSrc = "../image/cutomer icon/women.png";
   }
-  console.log("add new ekata awa 3");
 
-  
-  for(let i = 0; i < customerList.length-1; i++){
-      
-    if(customerID == customerList[i].customerID){
-        removeCustomer(i);
-        displayCustomerList();
-    }
-  }
+  imageToByteArray(imgSrc, function(byteArray) {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
 
-  const myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
+    const raw = JSON.stringify({
+      "customerId": customerID,
+      "nic": customerNIC,
+      "fstName": fName,
+      "lstName": lName,
+      "email": email,
+      "contactNumber": primaryContact,
+      "address": address,
+      "city": city,
+      "gender": gender,
+      "dateOfJoined": joinDate,
+      "profilePic":  Array.from(byteArray),
+      "orderIds": []
+    });
 
-  const raw = JSON.stringify({
-    "customerId": "C005",
-    "nic": "956789123V",
-    "fstName": "Samantha",
-    "lstName": "Wijesinghe",
-    "email": "samantha.w@gmail.com",
-    "contactNumber": "0703344556",
-    "address": "78, New Town",
-    "city": "Matara",
-    "gender": "Female",
-    "dateOfJoined": "2024-01-10",
-    "profilePic": null,
-    "orderIds": []
+    const requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    fetch("http://localhost:8080/customer/add", requestOptions)
+        .then((response) => response.text())
+        .then((result) => console.log(result))
+        .catch((error) => console.error(error));
   });
-
-  const requestOptions = {
-    method: "POST",
-    headers: myHeaders,
-    body: raw,
-    redirect: "follow"
-  };
-
-  fetch("http://localhost:8080/customer/add", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
-
-  const newCustomer = {
-    customerID: customerID,
-    customerNIC: customerNIC,
-    fName: fName,
-    lName: lName,
-    email: email,
-    primaryContact: primaryContact,
-    secondaryContact: secondaryContact,
-    address: address,
-    city: city,
-    joinDate: joinDate,
-    img: imgSrc,
-    gender: gender,
-  };
-  console.log("add new ekata awa 4");
-
-  addCustomer(newCustomer);
-  console.log("add new ekata awa 5");
-
-  updateCustomer(newCustomer, customerList.length - 1);
-  console.log("add new ekata awa 6");
-
-  console.log("update eken eliye");
-
-  console.log("add new ekata awa 7");
 
   displayCustomerList();
 }
