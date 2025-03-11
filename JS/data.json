@@ -1,0 +1,112 @@
+[
+    {
+        "productId": "B1001",
+        "productType": "BURGER",
+        "productName": "Classic Burger (Large)",
+        "price": 750.0,
+        "discount": 0.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    },
+    {
+        "productId": "B1002",
+        "productType": "BURGER",
+        "productName": "Classic Burger (Regular)",
+        "price": 1500.0,
+        "discount": 15.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2024-12-31",
+        "orderIds": []
+    },
+    {
+        "productId": "B1003",
+        "productType": "BURGER",
+        "productName": "Turkey Burger",
+        "price": 1600.0,
+        "discount": 15.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    },
+    {
+        "productId": "B1004",
+        "productType": "BURGER",
+        "productName": "Chicken Burger (Large)",
+        "price": 1400.0,
+        "discount": 5.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2024-12-31",
+        "orderIds": []
+    },
+   ,
+    {
+        "productId": "B1006",
+        "productType": "BURGER",
+        "productName": "Cheese Burger (Large)",
+      {
+        "productId": "B1005",
+        "productType": "BURGER",
+        "productName": "Chicken Burger (Regular)",
+        "price": 800.0,
+        "discount": 20.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    }   "price": 1000.0,
+        "discount": 0.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    },
+    {
+        "productId": "B1007",
+        "productType": "BURGER",
+        "productName": "Cheese Burger (Regular)",
+        "price": 600.0,
+        "discount": 0.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2024-12-31",
+        "orderIds": []
+    },
+    {
+        "productId": "B1008",
+        "productType": "BURGER",
+        "productName": "Bacon Burger",
+        "price": 650.0,
+        "discount": 15.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    },
+    {
+        "productId": "B1009",
+        "productType": "BURGER",
+        "productName": "Shawarma Burger",
+        "price": 800.0,
+        "discount": 0.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2024-12-31",
+        "orderIds": []
+    },
+    {
+        "productId": "B1010",
+        "productType": "BURGER",
+        "productName": "Olive Burger",
+        "price": 1800.0,
+        "discount": 0.0,
+        "qtyInHand": 5,
+        "productImage": null,
+        "expireDate": "2025-01-30",
+        "orderIds": []
+    }
+]

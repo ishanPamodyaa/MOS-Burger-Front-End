@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title href="index.html">MOS Burgers</title>
+    <link href="../CSS/customer.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="../index.html"
+                class="d-flex align-items-center mb-lg-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+
+                <span class="fs-1 text-danger-custom fw-bold">MOS <span
+                        class="text-warning-custom">Burgers</span></span>
+            </a>
+
+            <ul class="nav nav-pills navOption ">
+                <li class="nav-item "><a href="../index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item "><a href="orders.html" class="nav-link">Order</a></li>
+                <li class="nav-item "><a href="customer.html" class="nav-link">Customer</a></li>
+                <li class="nav-item "><a href="Products.html" class="nav-link">Store</a></li>
+                <li class="nav-item "><a href="placeOrder.html" class="nav-link">Place Order</a></li>
+            </ul>
+        </header>
+
+        <div class="b-example-divider "></div>
+
+    </div>
+
+    <div class="container d-flex justify-content-sm-between">
+        <div class="">
+            <input type="text" id="search-bar" class="form-control mt-3 sBar-custom" placeholder="Search Customer..."
+                oninput="searchCustomers()" />
+        </div>
+
+        <div class="">
+            <h2 class="display-7 fw-bold text-center mt-3 mb-3 text-warning-custom ">Customer List</h2>
+        </div>
+
+        <div class="">
+            <h2 class="display-7 fw-bold text-center mt-3 mb-3 text-warning-custom "> </h2>
+
+            <button type="button" class="btn btn-outline-warning fw-bold" data-bs-toggle="modal"
+                data-bs-target="#myModal" id="addCustomerBtn">
+                ADD Customers
+            </button>
+            <!-- The Modal -->
+
+            <div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form id="addCustomerForm">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title fw-bold">Add Customer</h4>
+                                <button type="button" class="btn-close btn-close-white"
+                                    data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+
+                                <div class="inputField mb-3">
+
+                                    <!-- Image preview element -->
+                                    <img  id="imagePreview" style="display:none; margin-top: 10px; max-width: 100%;" />
+                                </div>
+
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="customerID">Customer ID</label>
+                                    <input type="text" placeholder="CXXXX" class="form-control" id="customerID"
+                                        aria-describedby="basic-addon1" name="customerID">
+                                </div>
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="customerNIC">Customer NIC</label>
+                                    <input type="text" placeholder="933394050V" class="form-control" id="customerNIC"
+                                        aria-describedby="basic-addon1" name="customerNIC">
+                                </div>
+
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="Gender">Select Gender</label>
+                                    <select class="form-control" id="Gender" name="Gender" placeholder="Select Gender">
+                                        <option>Male</option>
+                                        <option>Female</option>    
+                                    </select>
+
+                                </div>
+
+                                <div class="inputField mb-3 d-flex row">
+                                    <div class="w-50">
+                                        <label class="mb-2 fw-bold fs-7 " for="fName">First Name</label>
+                                        <input type="text" class="form-control" id="fName" name="fName"
+                                            aria-describedby="basic-addon1" placeholder="e.g.,Nimal">
+                                    </div>
+                                    <div class="w-50">
+                                        <label class="mb-2 fw-bold fs-7" for="lName">Last Name</label>
+                                        <input type="text" class="form-control" id="lName" name="lName"
+                                            aria-describedby="basic-addon1" placeholder="e.g.,Perera">
+                                    </div>
+                                </div>
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="email">Email Address</label>
+                                    <input type="text" class="form-control" id="email" aria-describedby="basic-addon1"
+                                        name="email" placeholder="e.g., nimalperera@example.com">
+                                </div>
+                                <div class="inputField mb-3 d-flex row">
+                                    <div class="w-50">
+                                        <label class="mb-2 fw-bold fs-7 " for="primaryContact">Primary Contact</label>
+                                        <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}"
+                                        onpaste="let primaryContact = event.clipboardData.getData('text'); if(primaryContact){primaryContact.replace(/[^0-9]*/g,'');} "
+                                        min="1" step="1" class="form-control" id="primaryContact"
+                                        aria-describedby="basic-addon1" name="primaryContact" placeholder="+94 123 456 789">
+                                    </div>
+                                    <div class="w-50">
+                                        <label class="mb-2 fw-bold fs-7" for="secondaryContact">Secondary Contact</label>
+                                        <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}"
+                                        onpaste="let secondaryContact = event.clipboardData.getData('text'); if(pasteData){pasteData.replace(/[^0-9]*/g,'');} "
+                                        min="1" step="1" class="form-control" id="secondaryContact"
+                                        aria-describedby="basic-addon1" name="secondaryContact" placeholder="+94 123 456 789">
+                                    </div>
+                                </div>
+
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="customerAddress">Address</label>
+                                    <input type="text" class="form-control" id="customerAddress" name="customerAddress" placeholder="e.g., No. 123, Main Road, Colombo 07, Sri Lanka">
+                                </div>
+
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="customerCity">City</label>
+                                    <input type="text" class="form-control" id="customerCity" name="customerCity" placeholder="e.g., Gampaha">
+                                </div>
+
+                                <div class="inputField mb-3">
+                                    <label class="mb-2 fw-bold fs-7" for="joinDate">Join Date</label>
+                                    <input id="joinDate" class="form-control" type="date" name="joinDate" >
+                                </div>
+                                
+
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" data-bs-dismiss="modal"
+                                    name="btnPublish" id="publishBtn">Publish</button>
+
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="canselBtn">Cansel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row" id="CustomerTile">
+            <div class="col col-sm col-md-4 col-lg-3 col-xl-2 mt-3 gap-3 custom-card-col">
+                <div class="card card-custom">
+                    <!-- item display -->
+                    
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-white">&copy; 2024 Company, Inc</p>
+
+            <a href="index.html"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-3 text-danger-custom fw-bold">MOS <span
+                        class="text-warning-custom">Burgers</span></span>
+
+            </a>
+
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item "><a href="../index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item "><a href="orders.html" class="nav-link">Order</a></li>
+                <li class="nav-item "><a href="customer.html" class="nav-link">Customer</a></li>
+                <li class="nav-item "><a href="Products.html" class="nav-link">Store</a></li>
+                <li class="nav-item "><a href="placeOrder.html" class="nav-link">Place Order</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <script type="module" src="../JS/customer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

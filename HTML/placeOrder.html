@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burgers</title>
+    <link href="../CSS/Products.css" rel="stylesheet">
+    <link href="../CSS/placeOrder.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+            <a href="../index.html"
+                class="d-flex align-items-center mb-lg-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+
+                <span class="fs-1 text-danger-custom fw-bold">MOS <span
+                        class="text-warning-custom">Burgers</span></span>
+            </a>
+
+            <ul class="nav nav-pills navOption ">
+                <li class="nav-item "><a href="../index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item "><a href="orders.html" class="nav-link">Order</a></li>
+                <li class="nav-item "><a href="customer.html" class="nav-link">Customer</a></li>
+                <li class="nav-item "><a href="Products.html" class="nav-link">Store</a></li>
+                <li class="nav-item "><a href="placeOrder.html" class="nav-link">Place Order</a></li>
+            </ul>
+        </header>
+
+        <div class="b-example-divider "></div>
+
+    </div>
+
+
+    <div class="container">
+        <div class="row gap-2">
+            <div>
+                <H1 class="text-light-custom fw-bold d-flex justify-content-center align-items-center">Place Your Order
+                </H1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="row gap-2">
+            <!-- <div class="col p-2 border-color">
+                <p class="fw-bold text-white fs-3">Catogeris</p>
+            </div> -->
+            <div class="col  border-color tile " id="burgers">
+                <img src="../image/icon/Burger.png" width="50px">
+                <p class="fw-bold fs-6">Burgers</p>
+            </div>
+            <div class="col  border-color tile " id="submarines">
+                <img src="../image/icon/Submarine.png" width="50px">
+                <p class="fw-bold fs-6">Submarines</p>
+            </div>
+            <div class="col  border-color tile " id="fries">
+                <img src="../image/icon/FrenchFries.png" width="50px">
+                <p class="fw-bold fs-6">Fries</p>
+            </div>
+            <div class="col  border-color tile " id="pasta">
+                <img src="../image/icon/Pasta.png" width="50px">
+                <p class="fw-bold fs-6">Pasta</p>
+            </div>
+            <div class="col  border-color tile " id="chicken">
+                <img src="../image/icon/Chicken.png" width="50px">
+                <p class="fw-bold fs-6">Chicken</p>
+            </div>
+            <div class="col border-color tile " id="beverages">
+                <img src="../image/icon/Bevarages.png" width="50px">
+                <p class="fw-bold fs-6">Beverages</p>
+            </div>
+
+        </div>
+        <div class="b-example-divider "></div>
+    </div>
+
+
+
+
+
+    <div class="container">
+        <div class="row py-5 border-1">
+
+            <div class="col-lg-7">
+                <div class="container">
+                    <div class="row" id="productTile">
+                        <!-- <div class="col col-sm col-md-4 col-lg-3 col-xl-2 mt-3 gap-3 custom-card-col">
+                            <div class="card card-custom" > -->
+                        <!-- item display -->
+                        <!-- </div>
+                        </div> -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-5">
+
+
+                <div class="container">
+                    <div class="contentbar mt-3">
+                        <!-- Start row -->
+                        <div class="row">
+                            <!-- Start col col-md-12 col-lg-12 col-xl-12 -->
+                            <div class="">
+                                <div class="card m-b-30">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <h3 class="card-title text-light">Shopping Cart</h3>
+                                        <h5 class="text-light mt-2">Order ID : <strong class="text-warning"
+                                                id="orderId">O#011</strong> </h5>
+                                    </div>
+                                    <div class="d-flex d-flex justify-content-between ">
+                                        <div class="d-flex align-items-center" id="addCustomer"><a
+                                                href="customer.html"><img class="ms-3"
+                                                    src="../image/icon/add-customer.png" width="40px"></a></div>
+                                        <h5 class="text-light-custom fw-bold pe-3" id="currentDate"></h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row justify-content-center">
+
+                                            <div class="col-lg-12 col-md-12 col-sm-12" id="customerInfo">
+                                                <div class="inputField">
+                                                    <input type="search"
+                                                        placeholder="Search Customer via Contact Number Or NIC"
+                                                        class="form-control mb-3" id="searchField">
+
+                                                    <input type="text" class="form-control mb-3" id="fullName"
+                                                        placeholder="Customer Name">
+                                                    <input type="text" class="form-control mb-3" id="location"
+                                                        placeholder="Loation">
+                                                </div>
+                                            </div>
+                                            <div class="">
+                                                <div class="cart-container">
+                                                    <div class="cart-head">
+                                                        <div class="card-header d-flex justify-content-between">
+                                                            <h4 class="text-light-custom fw-bold">Order Summary</h4>
+                                                            <h5 class="text-light-custom fw-bold" id="totalCount">Total
+                                                                Items : 0 </h5>
+                                                        </div>
+                                                        <div class="table-responsive" id="cartTable">
+                                                            <!-- add item this area -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-body mt-4">
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <div class="order-total table-responsive ">
+                                                                    <table
+                                                                        class="table-custom table-borderless align-items-center ">
+                                                                        <tbody class="tblCustom" id="totalTable">
+                                                                            <tr>
+                                                                                <td class="leftCol">Sub Total :</td>
+                                                                                <td>LKR 0.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="leftCol ">Discount :</td>
+                                                                                <td>LKR 0.00</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td class="f-w-7 leftCol text-success">
+                                                                                    <h4>Amount :</h4>
+                                                                                </td>
+                                                                                <td class="f-w-7  fs-2 text-success">
+                                                                                    <h4>LKR 0.00</h4>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class=" d-flex justify-content-end align-items-center gap-3">
+                                                        <button type="button" class="btn btn-danger mr-2" value="Cancel"
+                                                            id="canselBtn">Cancel</button>
+                                                        <button type="button" class="btn btn-warning mr-2"
+                                                            value="Place Order" id="placeOrderBtn">Place Order</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End col -->
+                        </div>
+                        <!-- End row -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="show-cart table">
+
+                    </table>
+                    <div>Total price: $<span class="total-cart"></span></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Order now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-white">&copy; 2024 Company, Inc</p>
+
+            <a href="index.html"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <svg class="bi me-2" width="40" height="32">
+                    <use xlink:href="#bootstrap" />
+                </svg>
+                <span class="fs-3 text-danger-custom fw-bold">MOS <span
+                        class="text-warning-custom">Burgers</span></span>
+
+            </a>
+
+
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item "><a href="../index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li class="nav-item "><a href="orders.html" class="nav-link">Order</a></li>
+                <li class="nav-item "><a href="customer.html" class="nav-link">Customer</a></li>
+                <li class="nav-item "><a href="Products.html" class="nav-link">Store</a></li>
+                <li class="nav-item "><a href="placeOrder.html" class="nav-link">Place Order</a></li>
+            </ul>
+        </footer>
+    </div>
+
+
+    <script type="module" src="../JS/placeOrder.js"></script>
+    <!-- <script type="module" src="../JS/orders.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/jspdf-invoice-template@1.4.0/dist/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.72/vfs_fonts.js"></script>
+    >
+    <!-- <script  src="html2pdf.bundle.min.js"></script> -->
+</body>
+
+</html>

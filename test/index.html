@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOS Burgers - Restaurant Management System</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>MOS Burgers Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#store-management">Store Management</a></li>
+        <li><a href="#order-management">Order Management</a></li>
+        <li><a href="#customer-management">Customer Management</a></li>
+        <li><a href="#reports">Reports</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Welcome to MOS Burgers Management System</h2>
+      <p>Select a section to manage the restaurant.</p>
+    </section>
+
+    <section id="store-management">
+      <h2>Store Management</h2>
+      <div id="store-items">
+        <!-- Items will be displayed here -->
+      </div>
+      <button id="add-item">Add New Item</button>
+    </section>
+
+    <section id="order-management">
+      <h2>Order Management</h2>
+      <div id="menu">
+        <!-- Menu items will be displayed here for selection -->
+      </div>
+      <div id="cart">
+        <h3>Cart</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: <span id="total-price">0 LKR</span></p>
+        <button id="checkout">Checkout</button>
+      </div>
+    </section>
+
+    <section id="customer-management">
+      <h2>Customer Management</h2>
+      <button id="add-customer">Add New Customer</button>
+      <div id="customer-list">
+        <!-- Customer details will be shown here -->
+      </div>
+    </section>
+
+    <section id="reports">
+      <h2>Reports</h2>
+      <button id="monthly-report">Generate Monthly Report</button>
+      <button id="annual-report">Generate Annual Report</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 MOS Burgers</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
